@@ -1,0 +1,149 @@
+:root {
+  --color-primary1: hsl(179, 62%, 43%);
+  --color-primary2: hsl(179, 62%, 48%);
+  --color-primary3: hsl(71, 73%, 54%);
+  --color-neutral1: hsl(204, 43%, 93%);
+  --color-neutral2: hsl(218, 22%, 67%);
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+  background-color: var(--color-neutral1);
+  line-height: 1.5;
+}
+
+h1 {
+  color: var(--color-primary1);
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Container is used to center the whole card */
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-areas:
+    "card-top card-top"
+    "card-left card-right";
+}
+
+.card-top,
+.card-left,
+.card-right {
+  padding: 2.5rem;
+}
+
+/* Card TOP */
+.card-top {
+  grid-area: card-top;
+  background-color: hsl(0, 0%, 100%);
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+
+.card-top p {
+  color: var(--color-neutral2);
+}
+
+.card-top h2 {
+  color: var(--color-primary3);
+}
+
+/* Card LEFT */
+.card-left {
+  grid-area: card-left;
+  color: hsl(0, 0%, 100%);
+  background-color: var(--color-primary1);
+  border-bottom-left-radius: 0.6rem;
+}
+
+.card-left .price-info {
+  display: flex;
+  align-items: center;
+}
+
+.card-left .price-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 0.6rem;
+}
+
+.card-left .price-month {
+  opacity: 0.6;
+}
+
+.card-left p {
+  margin-bottom: 1rem;
+}
+
+.card-left a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  background-color: var(--color-primary3);
+  padding: 1em;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  box-shadow: -0.1em 0.2em 0.6em 0.2em rgba(0, 0, 0, 0.1);
+  transition: background-color ease-out 0.3s;
+}
+
+.card-left a:hover {
+  background-color: hsla(71, 73%, 54%, 0.767);
+}
+
+/* Card RIGHT */
+.card-right {
+  grid-area: card-right;
+  color: hsl(0, 0%, 100%);
+  background-color: var(--color-primary2);
+  border-bottom-right-radius: 0.6rem;
+}
+
+.card-right ul {
+  list-style: none;
+  opacity: 0.7;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  .card {
+    grid-template-areas:
+      "card-top"
+      "card-left"
+      "card-right";
+  }
+
+  .card-left {
+    border-radius: 0;
+  }
+
+  .card-right {
+    border-bottom-left-radius: 0.6rem;
+  }
+}
