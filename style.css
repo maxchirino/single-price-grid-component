@@ -145,5 +145,6 @@ h2 {
 
   .card-right {
     border-bottom-left-radius: 0.6rem;
+    margin-bottom: 2rem;
   }
 }
